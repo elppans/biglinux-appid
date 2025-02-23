@@ -61,7 +61,7 @@ function exibir_ajuda() {
 }
 
 big_appid() {
-WAYLAND_DEBUG=1 "$@" |& grep -E 'xdg_toplevel@*.*set_app_id'
+WAYLAND_DEBUG=1 "$url" |& grep -E 'xdg_toplevel@*.*set_app_id'
 }
 
 big_appid_web() {
