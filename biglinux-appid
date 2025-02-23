@@ -61,17 +61,16 @@ function exibir_ajuda() {
 }
 
 big_appid() {
+WAYLAND_DEBUG=1 "$@" |& grep -E 'xdg_toplevel@*.*set_app_id'
+}
+
+big_appid_web() {
 WAYLAND_DEBUG=1 \
    brave \
       --class="$class" \
       --profile-directory=Default \
       --app="$url" \
       |& grep -E 'xdg_toplevel@[0-9]+\.set_app_id'
-
-}
-
-big_appid_web() {
-WAYLAND_DEBUG=1 "$@" |& grep -E 'xdg_toplevel@*.*set_app_id'
 }
 
 # Verifica a opção passada
